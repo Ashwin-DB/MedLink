@@ -1,0 +1,1093 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins');
+
+body {
+  margin: 0;
+  font-family: "Poppins", Arial, sans-serif;
+  background: #f9f9f9;
+  color: #222;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+nav .logo {
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #004080;
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  position: relative;
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 600;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #03a70b;
+  border-radius: 5px;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+nav ul li a:hover {
+  color: #02aa16;
+}
+
+nav ul li a.active {
+  color: #017a09;
+}
+
+nav ul li a.active::after {
+  transform: scaleX(0);
+}
+
+/* HERO SECTIONS */
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: flex-start; /* text on left */
+  align-items: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(
+                135deg, 
+                rgba(0,64,128,0.7), 
+                rgba(0,122,204,0.7)
+              ),
+              url('https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg') 
+              no-repeat center center;
+  background-size: cover;   /* ✅ fill hero area */
+  background-attachment: scroll; /* ✅ keeps it bound, no overflow */
+  color: #fff;
+}
+
+.hero.about {
+  background: linear-gradient(135deg, #007acc, #00c6ff);
+}
+
+.hero-services {
+  background: linear-gradient(135deg, #018e0a, #02fe8c);
+}
+
+.hero.contact {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+
+.hero h1,
+.hero p {
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.hero p {
+  animation-delay: 0.3s;
+}
+
+.hero .hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.hero .hero-text {
+  flex: 1 1 500px;
+  min-width: 250px;
+}
+
+.hero .hero-image {
+  flex: 1 1 300px;
+  text-align: center;
+  min-width: 200px;
+}
+
+.hero .hero-image img {
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  opacity: 0.85;
+  mix-blend-mode: lighten;
+}
+
+.btn {
+  background: #fff;
+  color: #004080;
+  padding: 0.8rem 1.6rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn:hover {
+  background: #004080;
+  color: #fff;
+}
+
+.page {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.page h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.page h2 {
+  font-size: 1.5rem;
+  color: #007acc;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.page p,
+.page ul {
+  line-height: 1.6;
+  color: #444;
+}
+
+.page ul {
+  list-style: disc inside;
+  margin-bottom: 1.5rem;
+}
+
+.page ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+footer {
+  background: #004080;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* OVERVIEW SECTION */
+.overview {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem 1rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.overview h1 {
+  font-size: 2rem;
+  color: #004080;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.overview h2 {
+  font-size: 1.5rem;
+  color: #007acc;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.overview p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+/* SERVICES */
+.services {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem 1rem;
+}
+
+.services h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: #004080;
+  margin-bottom: 1rem;
+}
+
+.services p {
+  text-align: center;
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.service {
+  background: #a2edf9;
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  padding: 1rem;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.service i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.service p {
+  margin: 0;
+  font-weight: 600;
+}
+
+.service:hover {
+  transform: translateY(-5px);
+  background: #303efb;
+}
+
+/* MEDICO-LEGAL */
+/* About Page - Modern Layout */
+.medico-legal {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fdfdfd;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* Headings */
+.medico-legal h1 {
+  font-size: 2.5rem;
+  color: #004080;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.medico-legal h2 {
+  font-size: 2rem;
+  color: #007acc;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.medico-legal h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #02aa16;
+  margin-top: 5px;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.medico-legal h2:hover::after {
+  width: 100px;
+}
+
+/* Paragraphs */
+.medico-legal p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+/* Lists - modern card style */
+.medico-legal ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.medico-legal ul li {
+  list-style: none;
+  background: #004080;
+  color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  cursor: default;
+}
+
+.medico-legal ul li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  background: #02aa16;
+  color: #fff;
+}
+
+/* Contact Info Card */
+.medico-legal .contact-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  max-width: 700px;
+  margin: 2rem auto;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.medico-legal .contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+/* Fade-in scroll animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .medico-legal ul {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .medico-legal h1 {
+    font-size: 2rem;
+  }
+
+  .medico-legal h2 {
+    font-size: 1.5rem;
+  }
+}
+
+
+/* SPECIALISTS */
+.specialists-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.specialist {
+  padding: 0.8rem;
+  background: #a2edf9;
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.specialist img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.specialist p {
+  margin: 0;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.specialist:hover {
+  transform: translateY(-5px);
+  background: #303efb;
+  color: #fff;
+}
+
+/* CONTACT PAGE */
+.contact-page {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.contact-page h1,
+.contact-page h2 {
+  color: #004080;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.contact-info {
+  background: #ffffff;
+  padding: 1.5rem 2rem;
+  margin: 1.5rem auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+}
+
+.contact-info p {
+  margin: 0.8rem 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.contact-info a {
+  color: #018e0a;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.map-container {
+  margin-top: 2rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* WHY CHOOSE US */
+/* Why Choose Us Section */
+.why-choose-us {
+  padding: 3rem 2rem;
+  text-align: center;
+  opacity: 0.5;
+}
+
+.why-choose-us h2 {
+  margin-bottom: 2rem;
+  color: #004080;
+  font-size: 2rem;
+}
+
+/* ✅ Flexbox Row Layout */
+.pointers {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1.5rem;
+  flex-wrap: wrap; /* makes it responsive */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pointer {
+  flex: 1 1 250px; /* responsive sizing */
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Icons */
+.pointer i {
+  font-size: 2rem;
+  color: #007acc;
+  margin-bottom: 1rem;
+}
+
+/* Hover effect */
+.pointer:hover {
+  transform: translateY(-8px);
+  background: #007acc;
+}
+
+.pointer:hover i {
+  color: #fff;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page,
+  .contact-page {
+    padding: 1rem;
+  }
+
+  .contact-info {
+    padding: 1rem;
+  }
+}
+
+/* Footer navigation */
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem 2rem;
+  background: #004080;
+  color: #fff;
+  border-radius: 12px 12px 0 0;
+  margin-bottom: 1rem;
+}
+
+.footer-nav .footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-nav .footer-logo img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.footer-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-nav ul li a:hover,
+.footer-nav ul li a.active {
+  color: #02aa16;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .footer-nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* Fade in & slide up animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Footer nav initial state */
+.footer-nav {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.3s; /* delay before appearing */
+}
+
+.footer-nav ul li {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* Stagger each link for a cascading effect */
+.footer-nav ul li:nth-child(1) { animation-delay: 0.4s; }
+.footer-nav ul li:nth-child(2) { animation-delay: 0.5s; }
+.footer-nav ul li:nth-child(3) { animation-delay: 0.6s; }
+.footer-nav ul li:nth-child(4) { animation-delay: 0.7s; }
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin: 3rem auto;
+  max-width: 1200px;
+  padding: 0 1rem;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-image {
+  flex: 1;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 12px; /* nice modern rounded corners */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.05); /* subtle zoom effect on hover */
+}
+
+/* ✅ Our Expertise section styling */
+.intro {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #f9f9f9; /* light background to stand out */
+}
+
+.intro h2 {
+  font-size: 2rem;
+  color: #0066cc; /* theme accent color */
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.intro h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #00b894; /* highlight underline */
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+.intro p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 1rem auto 0;
+  color: #333;
+}
+
+.mission-vision {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 3rem 2rem;
+  background: #f9f9f9;
+  flex-wrap: wrap;
+}
+
+.mv-card {
+  position: relative;
+  flex: 1 1 300px;
+  background: rgba(255, 255, 255, 0.9); /* semi-transparent white overlay */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Background image using ::before */
+.mv-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15; /* adjust transparency */
+  z-index: 0;
+}
+
+.mission-card::before {
+  background-image: url("https://images.pexels.com/photos/5327862/pexels-photo-5327862.jpeg"); /* replace with your image */
+}
+
+.vision-card::before {
+  background-image: url("https://images.pexels.com/photos/3825527/pexels-photo-3825527.jpeg"); /* replace with your image */
+}
+
+.mv-card * {
+  position: relative;
+  z-index: 1; /* ensures text/icons appear above background */
+}
+
+.mv-card i {
+  font-size: 2.5rem;
+  color: #0066cc;
+  margin-bottom: 1rem;
+}
+
+.mv-card h2 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.mv-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* Reveal animation base */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+
+/* Active state when in view */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===================== */
+/* MOBILE RESPONSIVE     */
+/* ===================== */
+@media (max-width: 768px) {
+  /* About section stacks vertically */
+  .about-container {
+    flex-direction: column;
+  }
+
+  /* Mission & Vision stack vertically */
+  .mission-vision {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem 1rem; /* optional: reduce padding */
+  }
+
+  /* Reduce padding in cards */
+  .mv-card {
+    padding: 1.5rem;
+  }
+
+  /* Hero text padding */
+  .hero .hero-text {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  /* Hero image adjustment */
+  .hero .hero-image {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  /* Overview section */
+  .overview {
+    padding: 1.5rem;
+  }
+
+  /* Medico-legal list items shrink */
+  .medico-legal ul {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+
+  /* Medico-legal headings */
+  .medico-legal h1 {
+    font-size: 2rem;
+  }
+
+  .medico-legal h2 {
+    font-size: 1.5rem;
+  }
+
+  /* Specialists grid */
+  .specialists-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  /* Why choose us section */
+  .pointers {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* Contact info card */
+  .contact-info {
+    padding: 1rem;
+  }
+
+  /* Footer nav */
+  .footer-nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+
+  .hero .hero-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero .hero-image {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body, .page, .about-container, .mission-vision {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+nav ul {
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+nav ul li a {
+  font-size: 1.2rem; /* slightly smaller on mobile */
+}
+
+/* Contact page pop-up animation */
+.contact-page .reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: popUp 0.8s forwards;
+}
+
+@keyframes popUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stagger animations using nth-child */
+.contact-page h1.reveal {
+  animation-delay: 0.2s;
+}
+
+.contact-page .contact-info.reveal {
+  animation-delay: 0.4s;
+}
+
+.contact-page h2.reveal {
+  animation-delay: 0.6s;
+}
+
+.contact-page .map-container.reveal {
+  animation-delay: 0.8s;
+}
+
+/* Whole section with background */
+.why-we-exist {
+  background: url("https://images.pexels.com/photos/5452221/pexels-photo-5452221.jpeg") center/cover no-repeat;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+/* Add overlay for readability */
+.why-we-exist::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.6); /* dark overlay */
+  z-index: 0;
+}
+
+/* Ensure content sits above overlay */
+.why-we-exist h2,
+.why-we-exist .pointers {
+  position: relative;
+  z-index: 1;
+}
+
+/* Grid layout for cards */
+.pointers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Card styling */
+.pointer {
+  background: rgba(255, 255, 255, 0.85); /* transparent white */
+  padding: 2rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  color: #333;
+}
+
+/* Hover effect reveals more background */
+.pointer:hover {
+  background: rgba(255, 255, 255, 0.6);
+  transform: translateY(-8px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+/* Hamburger for mobile */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 1100; /* above sidebar */
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: #004080;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+/* Sidebar menu */
+@media (max-width: 768px) {
+  nav ul {
+    position: fixed;
+    top: 0;
+    left: -280px; /* hidden initially */
+    width: 280px;
+    height: 100%;
+    background: linear-gradient(180deg, #004080, #007acc); /* gradient styling */
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 5rem;
+    padding-left: 2rem;
+    transition: left 0.3s ease;
+    box-shadow: 4px 0 15px rgba(0,0,0,0.2);
+    z-index: 1050;
+  }
+
+  nav ul.active { left: 0; }
+
+  nav ul li a {
+    font-size: 1.3rem;
+    color: #fff;
+    font-weight: 600;
+    padding: 0.5rem 0;
+  }
+
+  nav ul li a:hover,
+  nav ul li a.active { color: #ffdd57; } /* highlight on hover/active */
+
+  .hamburger { display: flex; }
+}
+
+/* Sidebar menu hidden by default */
+@media (max-width: 768px) {
+  nav ul {
+    position: fixed;
+    top: 0;
+    left: -100%; /* fully hidden off-screen */
+    width: 280px;
+    height: 100%;
+    background: linear-gradient(180deg, #004080, #007acc);
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 5rem;
+    padding-left: 2rem;
+    transition: left 0.3s ease;
+    box-shadow: 4px 0 15px rgba(0,0,0,0.2);
+    z-index: 1050;
+  }
+
+  /* When active, slide in fully */
+  nav ul.active { left: 0; }
+
+  nav ul li a {
+    font-size: 1.3rem;
+    color: #fff;
+    font-weight: 600;
+    padding: 0.5rem 0;
+  }
+
+  nav ul li a:hover,
+  nav ul li a.active { color: #ffdd57; }
+
+  .hamburger { display: flex; }
+}
