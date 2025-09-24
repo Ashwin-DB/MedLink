@@ -1167,3 +1167,53 @@ nav ul li a {
     margin-top: 10px;
   }
 }
+
+/* Center hero on very narrow portrait viewports (covers 344×882 like Galaxy Z Fold 5 portrait)
+   Put this at the end of your stylesheet so it overrides earlier rules. */
+@media (width: 344px) and (height: 882px) and (orientation: portrait),
+       (max-width: 360px) and (orientation: portrait) {
+  .hero,
+  .hero-content,
+  .hero-text {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+    text-align: center !important; /* center inline text */
+  }
+
+  /* Make sure the parent is a centered column flex container */
+  .hero-content {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 auto !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  /* Remove floats / forced margins and limit width so lines wrap nicely */
+  .hero-text {
+    float: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    width: auto !important;
+    max-width: 320px !important; /* prevents long lines on narrow screens */
+  }
+
+  /* Ensure headings, paragraphs and button are centered and the button is centered block */
+  .hero-text h1,
+  .hero-text p {
+    text-align: center !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .hero-text .btn {
+    display: inline-block !important;
+    margin: 12px auto 0 !important;
+  }
+}
+
