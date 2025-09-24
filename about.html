@@ -8,6 +8,9 @@
   <link rel="icon" type="image/png" href="images/medlink_icon.png">
 </head>
 <body>
+
+  <div id="progress-bar"></div>
+  
   <header>
     <nav>
       <div class="logo-container">
@@ -171,6 +174,24 @@
         navMenu.classList.remove('active');
       });
     });
+
+    // Loading Progress Bar
+  const progressBar = document.getElementById("progress-bar");
+  let width = 0;
+  let interval = setInterval(() => {
+    if (width >= 90) clearInterval(interval);
+    else {
+      width += 10;
+      progressBar.style.width = width + "%";
+    }
+  }, 200);
+
+  window.addEventListener("load", () => {
+    progressBar.style.width = "100%";
+    setTimeout(() => {
+      progressBar.style.opacity = "0";
+    }, 500);
+  });
   </script>
 
   <footer>

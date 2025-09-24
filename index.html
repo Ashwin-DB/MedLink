@@ -8,6 +8,13 @@
   <link rel="icon" type="image/png" href="images/medlink_icon.png">
 </head>
 <body>
+  
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
+
+  <div id="progress-bar"></div>
+
   <header>
     <nav>
       <div class="logo-container">
@@ -174,25 +181,59 @@
   </footer>
 
   <script>
-    // Reveal on scroll
-    const revealElements = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.classList.add('active');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    revealElements.forEach(el => observer.observe(el));
-
-    // Mobile sidebar toggle
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.querySelector('nav ul');
-    hamburger.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-      hamburger.classList.toggle('active');
+  // Reveal on scroll
+  const revealElements = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target);
+      }
     });
-  </script>
+  }, { threshold: 0.1 });
+  revealElements.forEach(el => observer.observe(el));
+
+  // Mobile sidebar toggle
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.querySelector('nav ul');
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    hamburger.classList.toggle('active');
+  });
+
+  // Loading Progress Bar
+  const progressBar = document.getElementById("progress-bar");
+  let width = 0;
+  let interval = setInterval(() => {
+    if (width >= 90) clearInterval(interval);
+    else {
+      width += 10;
+      progressBar.style.width = width + "%";
+    }
+  }, 200);
+
+  window.addEventListener("load", () => {
+    progressBar.style.width = "100%";
+    setTimeout(() => {
+      progressBar.style.opacity = "0";
+    }, 500);
+  });
+
+  window.addEventListener("load", function() {
+    const preloader = document.getElementById("preloader");
+
+    // Check if user has already visited
+    if (!localStorage.getItem("visited")) {
+      // Show preloader the first time
+      setTimeout(() => {
+        preloader.classList.add("hidden");
+        localStorage.setItem("visited", "true");
+      }, 500); // small delay for smooth fade
+    } else {
+      // If already visited, hide immediately
+      preloader.style.display = "none";
+    }
+  });
+</script>
 </body>
 </html>
