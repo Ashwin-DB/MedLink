@@ -1138,3 +1138,32 @@ nav ul li a {
   object-fit: contain;
 }
 
+/* Mobile Footer Styles */
+@media (max-width: 600px) {
+  .footer-nav {
+    flex-direction: column;   /* stack logo and nav links vertically */
+    align-items: center;      /* center everything */
+    text-align: center;
+    gap: 15px;
+  }
+
+  .footer-nav ul {
+    flex-direction: column;   /* stack nav items */
+    gap: 10px;
+  }
+
+  .footer-logo {
+    justify-content: center;
+    font-size: 16px; /* slightly smaller text */
+  }
+
+  .footer-logo img {
+    width: 35px;  /* shrink logo for mobile */
+    height: auto;
+  }
+
+  footer p {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+}
